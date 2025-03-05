@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+	xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd
+        http://www.google.com/schemas/sitemap-video/1.1
+        http://www.google.com/schemas/sitemap-video/1.1/sitemap-video.xsd">
+
+
+	<url>
+		<loc>http://trefahso.rf.gd</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>1.00</priority>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/img/portada%20cardiganhs.jpg</image:loc>
+			<image:title>Comprar Cardigan Harry Styles Trefahso</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://trefahso.rf.gd/comprar/cardiganharrystyles.html</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>0.80</priority>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Trefahso</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-1.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Tejido</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-2.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Tejido</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-3.jpg</image:loc>
+			<image:title>Comprar Cardigan Harry Styles Trefahso</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-4.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Patrón</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-5.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Patrón</image:title>
+		</image:image>
+		<image:image>
+			<image:loc>http://trefahso.rf.gd/img/Cardigan%20Harry%20Styles%20patr%C3%B3n%20original%20M.jpg</image:loc>
+			<image:title>Cardigan Harry Styles Patrón Original Español</image:title>
+		</image:image>
+	</url>
+	<url>
+		<loc>http://trefahso.rf.gd/quienessomos.html</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>http://trefahso.rf.gd/colecciones.html</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>0.60</priority>
+	</url>
+	<url>
+		<loc>http://trefahso.rf.gd/terminosycondiciones.html</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>0.60</priority>
+	</url>
+	<url>
+		<loc>http://trefahso.rf.gd/img/v1bannertrefahso.webm</loc>
+		<lastmod>2023-08-02</lastmod>
+		<priority>0.60</priority>
+		<video:video>
+			<video:content_loc>http://trefahso.rf.gd/img/v1bannertrefahso.webm</video:content_loc>
+			<video:player_loc allow_embed="yes">http://trefahso.rf.gd/tu-pagina-de-video</video:player_loc>
+			<video:thumbnail_loc>http://trefahso.rf.gd/img/tu-miniatura-de-video.jpg</video:thumbnail_loc>
+			<video:title>Título de tu video</video:title>
+			<video:description>Descripción de tu video</video:description>
+		</video:video>
+	</url>
+</urlset>
+
+
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>http://trefahso.rf.gd/</loc>
+        <lastmod>2023-08-02</lastmod>
+        <priority>1.00</priority>
+    </url>
+    
+    
+<url>
+        <loc>http://trefahso.rf.gd/comprar/cardiganharrystyles.html</loc>
+        <lastmod>2023-08-02</lastmod>
+        <priority>0.80</priority>
+        
+    </url>
+    <url>
+        <loc>http://trefahso.rf.gd/quienessomos.html</loc>
+        <lastmod>2023-08-02</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>http://trefahso.rf.gd/temporadas.html</loc>
+        <lastmod>2023-08-02</lastmod>
+        <priority>0.60</priority>
+    </url>
+    <url>
+        <loc>http://trefahso.rf.gd/terminosycondiciones.html</loc>
+        <lastmod>2023-08-02</lastmod>
+        <priority>0.60</priority>
+    </url>
+ 
+</urlset> -->

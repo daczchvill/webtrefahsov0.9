@@ -1,0 +1,7 @@
+# Este fragmento de código activa el almacenamiento en caché de videos .mp4
+# Los videos se guardan en el navegador del usuario durante 1 mes
+# Esto acelera la carga y reduce el consumo de ancho de banda
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType video/mp4 "access plus 1 month"
+</IfModule>

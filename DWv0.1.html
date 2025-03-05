@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM WALL</title>
+    <style>
+        .comments-container ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, set, ref, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        
+        // Tu configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDSZtMBwSCO4wKXiABIGeMdzCjM7LkDJe4",
+            authDomain: "trefahso-muro.firebaseapp.com",
+            databaseURL: "https://trefahso-muro-default-rtdb.firebaseio.com",
+            projectId: "trefahso-muro",
+            storageBucket: "trefahso-muro.appspot.com",
+            messagingSenderId: "777130675171",
+            appId: "1:777130675171:web:9728e790d7a1790b9caed6",
+            measurementId: "G-24QX601DLM"
+        };
+
+        // Inicializa Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Espera a que el DOM se cargue antes de asignar event listeners
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Referencia a la colección de comentarios
+            const commentsRef = ref(database, 'comments');
+
+            // Obtener referencias a los elementos del DOM
+            var txtNombre = document.getElementById('nombre');
+            var txtEmail = document.getElementById('email');
+            var txtMensaje = document.getElementById('mensaje');
+            var btnEnviar = document.getElementById('btnEnviar');
+            var chatUl = document.getElementById('chatUl');
+
+            // Función para enviar el comentario a Firebase
+            btnEnviar.addEventListener("click", function () {
+                var nombre = txtNombre.value;
+                var mensaje = txtMensaje.value;
+                var email = txtEmail.value;
+
+                if (nombre && mensaje) {
+                    // Guardar el mensaje en Firebase
+                    push(commentsRef, {
+                        name: nombre,
+                        message: mensaje,
+                        email: email,
+                        timestamp: new Date().toISOString()
+                    });
+
+                    // Limpiar los campos del formulario después de enviar
+                    txtNombre.value = '';
+                    txtMensaje.value = '';
+                    txtEmail.value = '';
+                }
+            });
+
+            // Función para mostrar los mensajes en tiempo real
+            onValue(commentsRef, (snapshot) => {
+                var html = '';
+                snapshot.forEach(function (e) {
+                    var element = e.val();
+                    var nombre = element.name;
+                    var mensaje = element.message;
+                    html += "<li><b>" + nombre + ": </b>" + mensaje + "</li>";
+                });
+                chatUl.innerHTML = html;
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>DREAM WALL</h1>
+    </header>
+    <main>
+        <form action="">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input required type="text" id="nombre"/>
+                <label for="email">Email</label>
+                <input required type="email" id="email"/>
+            </div>
+            <div>
+                <label for="mensaje">Mensaje</label>
+                <textarea required id="mensaje"></textarea>
+            </div>
+            <button type="button" id="btnEnviar">Enviar</button>
+        </form>
+        <div class="comments-container" id="comments-container">
+            <ul id="chatUl">
+                <!-- Aquí se insertarán los comentarios en tiempo real -->
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dream Wall. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

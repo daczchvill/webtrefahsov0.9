@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   
+   <!-- Página de imágenes -->
+   <url>
+      <loc>http://trefahso.rf.gd/comprar/cardiganharrystyles.html</loc>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-1.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-2.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-3.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-4.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/comprar/images/products/cardiganharry-16-5.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/img/Cardigan%20Harry%20Styles%20patr%C3%B3n%20original%20M.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/img/Cardigan%20Harry%20Styles%20patr%C3%B3n%20original%20L.jpg</image:loc>
+      </image:image>
+      <image:image>
+         <image:loc>http://trefahso.rf.gd/img/Cardigan%20Harry%20Styles%20patr%C3%B3n%20original%20S.jpg</image:loc>
+      </image:image>
+   </url>
+   
+</urlset>

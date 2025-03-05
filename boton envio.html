@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animaciones</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+        background-image: url(https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/patron-dreamwall.png?alt=media&token=9183e199-9d7f-4444-8104-bb94f91a78ef);
+        background-repeat: repeat;
+        animation: moverFondo 600s linear infinite;
+    }
+
+    @keyframes moverFondo {
+        0%, 100% {
+            background-position: 0 0;
+        }
+        50% {
+            background-position: 100% 0;
+        }
+    }
+
+    #videoFondo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        pointer-events: none;
+        opacity: .2;
+    }
+
+    #mensajeEnvioFelicitacion {
+        display: none;
+        text-align: center;
+        font-size: 24px;
+        color: #fff;
+        background-color: #4CAF50;
+        padding: 20px;
+        border-radius: 10px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+    }
+
+    .aparecerMensaje {
+        animation: aparecerMensaje 1s ease forwards;
+    }
+
+    @keyframes aparecerMensaje {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    #btnEnviar, #btnCompartirInstagram {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    textarea, input[type="email"] {
+        display: block;
+        margin: 20px auto;
+        width: 80%;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.7); /* Fondo transparente */
+        backdrop-filter: blur(5px); /* Desenfoque */
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    /* Estilos para el modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal img {
+        max-width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<textarea placeholder="Escribe tu mensaje aquí" required id="mensaje"></textarea>
+<input type="email" placeholder="Email">
+
+<button type="button" id="btnEnviar">Enviar</button>
+<button type="button" id="btnCompartirInstagram">Compartir en Instagram</button>
+
+<div id="mensajeEnvioFelicitacion">¡Felicidades! Tu mensaje ha sido enviado correctamente.</div>
+
+<audio id="audioFelicidades" src="felicidades.mp3"></audio>
+
+<!-- Modal -->
+<div id="modalInstrucciones" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>¡Casi listo! Ahora solo tienes que pegar tu mensaje en Instagram.</p>
+    <img src="instrucciones.gif" alt="Instrucciones para pegar el mensaje en Instagram">
+  </div>
+</div>
+
+<script>
+    var modal = document.getElementById("modalInstrucciones");
+    var span = document.getElementsByClassName("close")[0];
+    var ultimoMensaje = "";
+
+    function mostrarModal() {
+        modal.style.display = "flex";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+        var url = "instagram://story-camera";
+        window.location.href = url;
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            var url = "instagram://story-camera";
+            window.location.href = url;
+        }
+    }
+
+    document.getElementById("btnEnviar").addEventListener("click", function() {
+        var mensaje = document.getElementById("mensaje").value;
+
+        if (mensaje.trim() === "") {
+            alert("Por favor, escribe un mensaje antes de enviar.");
+            return;
+        }
+
+        ultimoMensaje = mensaje + "\n#trefahsodreamwall";
+        document.getElementById("audioFelicidades").play();
+        document.getElementById("mensajeEnvioFelicitacion").style.display = "block";
+        document.getElementById("mensajeEnvioFelicitacion").classList.add("aparecerMensaje");
+        document.getElementById("mensaje").value = "";
+
+        setTimeout(function() {
+            document.getElementById("mensajeEnvioFelicitacion").style.display = "none";
+        }, 8000);
+    });
+
+    document.getElementById("btnCompartirInstagram").addEventListener("click", function() {
+        if (ultimoMensaje === "") {
+            alert("Por favor, escribe un mensaje y haz clic en enviar antes de compartir en Instagram.");
+            return;
+        }
+
+        navigator.clipboard.writeText(ultimoMensaje).then(function() {
+            mostrarModal();
+        }, function() {
+            alert("Error al copiar el mensaje al portapapeles.");
+        });
+    });
+</script>
+
+</body>
+</html>

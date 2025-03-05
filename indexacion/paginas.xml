@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- Index -->
+    <url>
+        <loc>https://trefahso.rf.gd/</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>1.00</priority>
+    </url>
+    
+    <!-- Dreamwall -->
+    <url>
+        <loc>https://trefahso.rf.gd/dreamwall</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Colecciones -->
+    <url>
+        <loc>https://trefahso.rf.gd/colecciones</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.60</priority>
+    </url>
+
+    <!-- DWfaq -->
+    <url>
+        <loc>https://trefahso.rf.gd/DWfaq</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Quiénes Somos -->
+    <url>
+        <loc>https://trefahso.rf.gd/quienessomos</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Términos y Condiciones -->
+    <url>
+        <loc>https://trefahso.rf.gd/terminosycondiciones</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.60</priority>
+    </url>
+
+    <!-- Catálogo -->
+    <url>
+        <loc>https://trefahso.rf.gd/catalogo</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Comprar - Cardigan Harry Styles -->
+    <url>
+        <loc>https://trefahso.rf.gd/comprar/cardiganharrystyles</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Comprar - Top de Cerezas -->
+    <url>
+        <loc>https://trefahso.rf.gd/comprar/topdecerezas</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Comprar - Amigurumis Ranita -->
+    <url>
+        <loc>https://trefahso.rf.gd/comprar/amigurumis/ranita</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+    <!-- Comprar - Totebag -->
+    <url>
+        <loc>https://trefahso.rf.gd/comprar/totebag</loc>
+        <lastmod>2025-02-26</lastmod>
+        <priority>0.80</priority>
+    </url>
+
+</urlset>

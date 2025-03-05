@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM WALL</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- magic sparkle font es de pago por eso la borre, ahora estas otras dos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.cdnfonts.com/css/botera-tfe" rel="stylesheet">
+
+
+    <!-- Estilos -->
+    <style>
+        h1,
+        h2,
+        h3 {
+            color: #7A7B90;
+            /* Morado encantado */
+        }
+
+        a {
+            text-decoration: none;
+            color: #564144;
+        }
+
+        body {
+            /* font-family: 'Poppins', sans-serif; */
+            font-family: "Cormorant SC", serif;
+            font-weight: 700;
+            font-style: normal;
+            letter-spacing: 0.8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            /* background: #aaa; */
+            position: relative;
+            /* background-image: url(https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/patron-dreamwall.png?alt=media&token=9183e199-9d7f-4444-8104-bb94f91a78ef); FONDO NUBES */
+            /*background-image: url(https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/dreamwall%20background.png?alt=media&token=3fed186d-22c0-4e1b-9c74-7bb6d554e9ad);*/
+            background-image: url(https://imagizer.imageshack.com/img922/4718/WBSJn6.png);
+            background-position-x: center top;
+            background-repeat: repeat;
+            /* background-attachment: fixed; */
+            animation: moverFondo 600s linear infinite;
+            /* 3 veces más lento */
+        }
+
+        @keyframes moverFondo {
+
+            0%,
+            100% {
+                background-position: 0 0;
+            }
+
+            50% {
+                background-position: 100% 0;
+            }
+        }
+
+
+
+
+
+
+
+
+        /* ESTO NO FUNCIONA EN IPHONE */
+        /* SOLO DISPONIBLE EN COMPUTADORA */
+
+        #decoracion {
+            width: 100%;
+            /* Ancho de la ventana */
+            z-index: 9999;
+            /* Asegura que esté por encima de todo */
+            pointer-events: none;
+            opacity: 0;
+            animation: moverDecoracion 90s linear infinite, parpadear 45s linear infinite;
+            /* velocidad, lento */
+            position: fixed;
+            top: 0;
+            /* Ajuste de posición vertical */
+            mix-blend-mode: screen;
+        }
+
+
+        @keyframes moverDecoracion {
+            0% {
+                transform: translateY(-50%);
+            }
+
+            100% {
+                transform: translateY(125%);
+                /* Cubre toda la pantalla */
+            }
+        }
+
+        @keyframes parpadear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Ocultar en dispositivos móviles y tablets */
+        @media only screen and (max-width: 1024px) {
+            #decoracion {
+                display: none;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        b {
+            font-size: 14px;
+        }
+
+        header img {
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            
+            header img {
+                width: 100%;
+            }
+            .comments-container li:hover{
+                margin: 40px 0;
+            }
+        }
+
+        #separador {
+            width: 33%;
+            margin: 20px 0;
+        }
+
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main form {
+            margin-top: 20px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        main form div {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        main form ::placeholder {
+            color: #A27C81;
+        }
+
+        main form input,
+        main form textarea {
+            width: calc(50% - 5px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: "Cormorant SC", serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 0.8px;
+            color: #42273B;
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Fondo transparente */
+            -webkit-backdrop-filter: blur(5px);
+            /* Desenfoque en Safari */
+            backdrop-filter: blur(5px);
+            /* Desenfoque en Chrome y otros navegadores */
+        }
+
+
+        main form textarea {
+            font-family: "Cormorant SC", serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 1px;
+            width: 100%;
+            min-height: 80px;
+            max-height: 300px;
+            font-size: 28px;
+            resize: vertical;
+            color: #42273B;
+        }
+
+        main form button {
+            width: 100px;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: #42273B;
+            cursor: pointer;
+            font-family: "Cormorant SC", serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
+        #btnEnviar {
+            background-color: #FFE770;
+            /* Fondo más claro */
+            box-shadow: 0 0 0.5em 0.1em #FFD700,
+                /* Brillo sutil exterior */
+                0 0 1.5em 0.5em rgba(255, 215, 0, 0.3),
+                /* Difuminado menos intenso */
+                inset 0 0 0.5em 0.1em #FFD700;
+            /* Brillo suave interior */
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+
+        #btnEnviar:hover {
+            background-color: #FFD700;
+            /* Amarillo brillante dorado */
+            box-shadow: 0 0 1em 0.25em #FFD700,
+                /* Resplandor exterior */
+                0 0 4em 2em rgba(255, 215, 0, 0.5),
+                /* Difuminado extendido */
+                inset 0 0 0.75em 0.25em #FFD700;
+            /* Brillo interior */
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+
+        #falsesubmit {
+            background-color: #FFE770;
+            /* Fondo más claro */
+            box-shadow: 0 0 0.5em 0.1em #FFD700,
+                /* Brillo sutil exterior */
+                0 0 1.5em 0.5em rgba(255, 215, 0, 0.3),
+                /* Difuminado menos intenso */
+                inset 0 0 0.5em 0.1em #FFD700;
+            /* Brillo suave interior */
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        #falsesubmit:hover {
+            background-color: #FFD700;
+            /* Amarillo brillante dorado */
+            box-shadow: 0 0 1em 0.25em #FFD700,
+                /* Resplandor exterior */
+                0 0 4em 2em rgba(255, 215, 0, 0.5),
+                /* Difuminado extendido */
+                inset 0 0 0.75em 0.25em #FFD700;
+            /* Brillo interior */
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+
+        #btnCompartirInstagram {
+            padding: 0;
+            border: none;
+            background-image: url(https://1000marcas.net/wp-content/uploads/2019/11/Instagram-Logo.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+        }
+
+        #btnCompartirInstagram:hover {
+            opacity: 0.8;
+            /* Reducimos la opacidad al pasar el mouse */
+        }
+
+        .comments-container {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .comments-container ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+
+        .comments-container li {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 22px;
+            color: #42273B;
+            text-align: left;
+            width: 100%;
+            transition: 1s;
+            background-color: rgba(255, 255, 255, .3);
+            /* Fondo transparente */
+
+
+
+            /* el ultimo valor corresponde a la opacidad */
+            box-shadow: 0 0 1em 0.3em rgba(66, 39, 59, 0.5);
+
+            backdrop-filter: blur(5px);
+            /* Desenfoque */
+            -webkit-backdrop-filter: blur(5px);
+            /* Desenfoque en Safari */
+        }
+
+
+
+
+
+
+        .comments-container li:hover {
+            box-shadow: 0 0 1em 0.25em #A27C81,
+                /* Resplandor exterior */
+                0 0 4em 2em rgba(137, 35, 181, 0.3),
+                /* Difuminado extendido */
+                inset 0 0 0.75em 0.25em #A27C81;
+            /* Brillo interior */
+            transform: scale(1.1);
+            transition: 1s;
+        }
+
+
+
+
+
+
+
+
+        @media (min-width: 768px) {
+            .comments-container ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: space-between;
+            }
+
+            .comments-container li {
+                flex: 1 1 calc(50% - 10px);
+                box-sizing: border-box;
+            }
+        }
+
+        #mensajeEnvioFelicitacion {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+            font-family: "Cormorant SC", serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 0.8px;
+            color: #42273B;
+            /* background-color: #4CAF50; */
+            padding: 200px;
+            border-radius: 10px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: rgba(255, 255, 255, .3);
+            backdrop-filter: blur(5px);
+        }
+
+        #mensajeEnvioFelicitacion img {
+            display: block;
+            max-width: 100%;
+            /* La imagen ocupará todo el ancho disponible */
+            max-height: 100%;
+            /* La imagen ocupará todo el alto disponible */
+            margin: 20px auto;
+            /* Centrar la imagen horizontalmente */
+            object-fit: contain;
+            /* Ajustar para que no se recorte */
+        }
+
+        .aparecerMensaje {
+            animation: aparecerMensaje 1s ease forwards;
+        }
+
+        @keyframes aparecerMensaje {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Estilos para el modal */
+        #videotutorial {
+            width: 70%;
+        }
+
+        #modalInstrucciones {
+            color: #ffffff;
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modalInstrucciones img {
+            display: block;
+            max-width: 100%;
+            /* La imagen ocupará todo el ancho disponible */
+            max-height: 100%;
+            /* La imagen ocupará todo el alto disponible */
+            margin: 20px auto;
+            /* Centrar la imagen horizontalmente */
+            object-fit: contain;
+            /* Ajustar para que no se recorte */
+        }
+
+        .modal {
+            display: -webkit-flex;
+            /* Compatibilidad con Safari */
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            /* Limita el ancho del modal */
+            max-height: 90%;
+            /* Limita el alto del modal */
+            overflow: auto;
+            /* Permite hacer scroll si es necesario */
+        }
+
+
+        #modalInstrucciones .modal-content {
+            background-color: #000000;
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            position: relative;
+        }
+
+        #modalInstrucciones .modal-content .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        #modalInstrucciones .modal-content .close:hover,
+        #modalInstrucciones .modal-content .close:focus {
+            color: #42273B;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <!-- js bootstrap -->
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, onValue, push } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+    // ** Configuración de Firebase **
+    const firebaseConfig = {
+        apiKey: "AIzaSyDSZtMBwSCO4wKXiABIGeMdzCjM7LkDJe4",
+        authDomain: "trefahso-muro.firebaseapp.com",
+        databaseURL: "https://trefahso-muro-default-rtdb.firebaseio.com",
+        projectId: "trefahso-muro",
+        storageBucket: "trefahso-muro.appspot.com",
+        messagingSenderId: "777130675171",
+        appId: "1:777130675171:web:9728e790d7a1790b9caed6",
+        measurementId: "G-24QX601DLM"
+    };
+
+    // ** Inicializa Firebase **
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // ** Referencias al DOM **
+        const txtNombre = document.getElementById('nombre');
+        const txtEmail = document.getElementById('email');
+        const txtMensaje = document.getElementById('mensaje');
+        const btnEnviar = document.getElementById('btnEnviar'); // Botón original (comentado en el HTML)
+        const btnFalseSubmit = document.getElementById('falsesubmit'); // Nuevo botón de enviar
+        const chatUl = document.getElementById('chatUl');
+        let ultimoMensaje = "";
+
+        // ** Validación de correo electrónico **
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        // ** Función del botón "falsesubmit" **
+        btnFalseSubmit.addEventListener("click", () => {
+            alert(
+                "Trefahso Dream Wall ha cumplido su misión ✨. Aunque ya no estamos aceptando más mensajes, queremos agradecer de corazón a todas las personas que compartieron sus sueños y formaron parte de esta mágica experiencia 💫. Cada palabra y cada deseo se ha convertido en un hilo eterno que nos une como comunidad. Gracias por tejer este sueño junto a nosotros. ¡Esto no es un adiós, sino el comienzo de nuevas historias que seguiremos escribiendo juntos!"
+            );
+        });
+
+        // ** Mostrar mensajes en tiempo real **
+        onValue(ref(database, 'comments'), (snapshot) => {
+            chatUl.innerHTML = ''; // Limpia los mensajes previos
+            snapshot.forEach((e) => {
+                const element = e.val();
+                const nombre = element.name;
+                const mensaje = element.message;
+                chatUl.innerHTML = `<li>${mensaje} <b><br>@${nombre}</b></li>` + chatUl.innerHTML;
+            });
+        });
+
+        // ** (Opcional) Funcionalidad del botón original "btnEnviar" **
+        // Si decides reactivar el botón original para pruebas o futuras funcionalidades:
+        // btnEnviar.addEventListener("click", function () {
+        //     const nombre = txtNombre.value.trim();
+        //     const email = txtEmail.value.trim();
+        //     const mensaje = txtMensaje.value.trim();
+
+        //     if (!nombre || !email || !isValidEmail(email) || !mensaje) {
+        //         alert("Por favor completa todos los campos correctamente.");
+        //         return;
+        //     }
+
+        //     push(ref(database, 'comments'), {
+        //         name: nombre,
+        //         message: mensaje,
+        //         email: email,
+        //         timestamp: new Date().toISOString()
+        //     });
+
+        //     txtNombre.value = '';
+        //     txtEmail.value = '';
+        //     txtMensaje.value = '';
+
+        //     alert("Mensaje enviado correctamente.");
+        // });
+    });
+</script>
+
+
+
+
+</head>
+
+<body>
+
+  <!-- BARRA DE NAVEGACION -->
+
+  <nav id="nav">
+    <div class="container-fluid">
+        <a href="quienessomos.html">
+            <img style="width: 100px;" class="logobar" src="img/LOGO.png" alt="logo trefahso">
+        </a>
+        
+        <div class="nav-links">
+            <a href="quienessomos.html">Quiénes somos -</a>
+            <a href="index.html#catalogo">Catálogo -</a>
+            <a href="index.html#contacto">Contacto</a>
+    </div>
+</nav>
+
+
+<!-- FIN DE BARRA DE NAVEGACION -->
+
+
+
+    <!--destellos decoracion no funciona en iphone-->
+    <img id="decoracion"
+        src="https://res.cloudinary.com/dckbmrlmr/image/upload/v1740625361/destellos_decoracion_xzyphq.gif"
+        alt="Decoración" style="object-fit: cover;">
+
+
+
+
+
+
+    <header>
+        <!--<h1>DREAM WALL</h1>-->
+        <img style="margin-top: 10px;" src="https://imagizer.imageshack.com/v2/731x591q70/922/seni8k.png"
+            alt="Dream Wall Logo">
+            <h3>2024 - 2025</h3>
+    </header>
+    <h2 class="footer-newsletter__title">Comparte algo de valor ...</h2>
+    <a target="_blank" href="DWfaq.html">Que es esta página?</a>
+
+    <!-- <button id="testModalButton">Probar Modal</button>
+    <button id="testInstagramModalButton">Probar Modal de Instagram</button> -->
+
+    <img id="separador"
+        src="https://imagizer.imageshack.com/v2/240x34q70/c/923/eJJS5a.png"
+        alt="">
+    <main>
+        <form action="javascript:void(0);">
+            <div>
+                <input placeholder="Ig o Nombre" required type="text" id="nombre" />
+                <input placeholder="Email" required type="email" id="email" />
+            </div>
+            <div>
+                <textarea placeholder="Mensaje" required id="mensaje"></textarea>
+            </div>
+            <!--<button type="button" id="btnEnviar">Enviar</button> -->
+             <button type="button" id="falsesubmit">Enviar</button> 
+            <button type="button" id="btnCompartirInstagram">
+
+            </button>
+
+            <!-- <div id="mensajeEnvioFelicitacion">¡Felicidades! Tu mensaje ha sido enviado correctamente.</div> -->
+            <div id="mensajeEnvioFelicitacion">
+                <img src="https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/enviomensaje.png?alt=media&token=6682bf85-33a7-4e09-8235-eda42dcdc84f"
+                    alt="">
+                <!-- <span>tu sueños so....+nombre</span> -->
+            </div>
+
+
+            <audio id="audioFelicidades" src="audio/felicidades.mp3"></audio>
+        </form>
+        <div class="comments-container" id="comments-container">
+            <ul id="chatUl">
+                <!-- Aquí se insertarán los comentarios en tiempo real -->
+
+
+
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 <a href="index.html">Trefahso</a> - Dream Wall 1.0 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Modal de instrucciones -->
+    <div id="modalInstrucciones">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Cómo compartir en Instagram</h2>
+            <video id="videotutorial" autoplay loop muted playsinline class="video-background">
+                <source
+                    src="https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/tutorialcompartirig.mp4?alt=media&token=e54f77f0-d1a9-44f3-bfe3-a6c7394ab578"
+                    type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+
+            <p>1. La aplicación de Instagram se abrirá automáticamente.</p>
+            <p>2. Pega tu mensaje copiado en tu historia.</p>
+            <p>3. Comparte con tus amigos.</p>
+            <img src="https://firebasestorage.googleapis.com/v0/b/trefahso-muro.appspot.com/o/dream%20wall%20logo%20animado.gif?alt=media&token=318f00a0-0b83-4880-b614-dd8c8998c595"
+                alt="">
+        </div>
+    </div>
+</body>
+
+</html>
